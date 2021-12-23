@@ -1,0 +1,6 @@
+5×1 = 334 * incorrect (answer was 5)
+3×1 = 435 * incorrect (answer was 3)
+2×0 = 435 * incorrect (answer was 0)
+2×1 = -2147483647 * incorrect (answer was 2)
+1×1 = 5 * incorrect (answer was 1)
+Score: 0%

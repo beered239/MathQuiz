@@ -1,0 +1,6 @@
+10×1 = 10 * correct
+4×1 = 4 * correct
+10×0 = 23 * incorrect (answer was 0)
+2×0 = 12 * incorrect (answer was 0)
+0×0 = 321 * incorrect (answer was 0)
+Score: 40%

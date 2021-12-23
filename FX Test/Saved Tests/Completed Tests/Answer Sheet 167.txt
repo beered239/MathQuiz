@@ -1,0 +1,7 @@
+18÷3 = 6 * correct
+36÷3 = 12 * correct
+1÷1 = 1 * correct
+0÷4 = 0 * correct
+6÷3 = 2 * correct
+9÷1 = 9 * correct
+Score: 100% Great Job!

@@ -1,0 +1,6 @@
+9÷1 = 9 * correct
+12÷2 = 6 * correct
+4÷1 = 4 * correct
+9÷3 = 3 * correct
+12÷2 = 6 * correct
+Score: 100% Great Job!

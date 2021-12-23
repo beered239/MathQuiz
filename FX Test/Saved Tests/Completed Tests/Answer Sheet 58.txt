@@ -1,0 +1,6 @@
+11×1 = 11 * correct
+11×1 = 11 * correct
+7×0 = 0 * correct
+11×1 = 11 * correct
+8×0 = 0 * correct
+Score: 100% Great Job!

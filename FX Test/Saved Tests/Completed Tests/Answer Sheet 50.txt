@@ -1,0 +1,6 @@
+11×1 = 11 * correct
+7×0 = 0 * correct
+1×1 = 213 * incorrect (answer was 1)
+12×1 = 231 * incorrect (answer was 12)
+4×1 = 4 * correct
+Score: 60%

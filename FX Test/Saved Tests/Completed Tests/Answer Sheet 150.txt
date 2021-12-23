@@ -1,0 +1,11 @@
+10÷1 = 10 * correct
+36÷3 = 12 * correct
+24÷2 = 12 * correct
+18÷2 = 123 * incorrect (answer was 9)
+1÷1 = 1 * correct
+8÷1 = 8 * correct
+9÷1 = 9 * correct
+2÷2 = 1 * correct
+4÷1 = 4 * correct
+15÷3 = 5 * correct
+Score: 90%

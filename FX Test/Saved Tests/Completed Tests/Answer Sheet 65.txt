@@ -1,0 +1,11 @@
+9×1 = 4 * incorrect (answer was 9)
+4×1 = 4 * correct
+9×1 = 4 * incorrect (answer was 9)
+11×1 = 4 * incorrect (answer was 11)
+0×0 = 4 * incorrect (answer was 0)
+9×0 = 4 * incorrect (answer was 0)
+12×0 = -2147483647 * incorrect (answer was 0)
+12×1 = 4 * incorrect (answer was 12)
+12×1 = 44 * incorrect (answer was 12)
+11×1 = 4 * incorrect (answer was 11)
+Score: 10%

@@ -1,0 +1,6 @@
+0×0 = 3 * incorrect (answer was 0)
+10×1 = 3 * incorrect (answer was 10)
+12×0 = 3 * incorrect (answer was 0)
+2×1 = 3 * incorrect (answer was 2)
+8×1 = 3 * incorrect (answer was 8)
+Score: 0%

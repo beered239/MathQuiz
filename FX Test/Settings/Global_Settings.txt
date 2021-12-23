@@ -1,0 +1,6 @@
+Addition: 0
+Subtraction: 0
+Multiplication: 0
+Division: 4
+Indicate if answer was correct: true
+Display Scores On Screen: false

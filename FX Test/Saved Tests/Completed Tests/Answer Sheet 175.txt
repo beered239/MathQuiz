@@ -1,0 +1,5 @@
+40÷4 = 10 * correct
+10÷1 = 10 * correct
+4÷2 = 2 * correct
+24÷2 = 12 * correct
+Score: 100% Great Job!

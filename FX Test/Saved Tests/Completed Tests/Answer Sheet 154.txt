@@ -1,0 +1,11 @@
+9÷3 = 3 * correct
+0÷2 = 0 * correct
+16÷4 = 3 * incorrect (answer was 4)
+6÷3 = 2 * correct
+36÷4 = 9 * correct
+22÷2 = 11 * correct
+20÷4 = 5 * correct
+2÷1 = 2 * correct
+1÷1 = 1 * correct
+16÷4 = 4 * correct
+Score: 90%

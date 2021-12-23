@@ -1,0 +1,6 @@
+9×0 = 0 * correct
+6×0 = 0 * correct
+9×1 = 9 * correct
+4×1 = 4 * correct
+5×0 = 0 * correct
+Score: 100% Great Job!

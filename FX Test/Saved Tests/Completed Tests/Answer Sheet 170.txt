@@ -1,0 +1,7 @@
+5÷1 = 5 * correct
+16÷2 = 8 * correct
+1÷1 = 1 * correct
+20÷2 = 10 * correct
+22÷2 = 11 * correct
+4÷1 = 4 * correct
+Score: 100% Great Job!

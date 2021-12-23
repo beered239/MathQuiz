@@ -1,0 +1,11 @@
+0÷4 = 0 * correct
+18÷2 = 9 * correct
+36÷4 = 9 * correct
+12÷2 = 6 * correct
+15÷3 = 5 * correct
+24÷2 = 12 * correct
+6÷2 = 3 * correct
+22÷2 = 11 * correct
+9÷3 = 3 * correct
+15÷3 = 5 * correct
+Score: 100% Great Job!

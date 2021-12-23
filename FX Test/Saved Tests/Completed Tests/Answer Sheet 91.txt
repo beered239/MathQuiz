@@ -1,0 +1,6 @@
+10×0 = 345 * incorrect (answer was 0)
+10×0 = 43 * incorrect (answer was 0)
+2×1 = 5 * incorrect (answer was 2)
+1×0 = 45 * incorrect (answer was 0)
+11×1 = 4 * incorrect (answer was 11)
+Score: 0%

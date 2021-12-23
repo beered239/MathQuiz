@@ -1,0 +1,5 @@
+5×1 = 5 * correct
+11-1 = 10 * correct
+1-1 = 0 * correct
+1˖1 = 0 * incorrect (answer was 2)
+2÷1 = 2 * correct

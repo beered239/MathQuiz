@@ -1,0 +1,11 @@
+7×0 = 0 * correct
+2×1 = 0 * incorrect (answer was 2)
+11×1 = 0 * incorrect (answer was 11)
+3×1 = 0 * incorrect (answer was 3)
+5×1 = 0 * incorrect (answer was 5)
+9×0 = 0 * correct
+9×1 = 0 * incorrect (answer was 9)
+3×1 = 0 * incorrect (answer was 3)
+2×1 = 0 * incorrect (answer was 2)
+5×0 = 0 * correct
+Score: 30%

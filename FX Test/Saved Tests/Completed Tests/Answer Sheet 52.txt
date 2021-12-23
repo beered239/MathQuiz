@@ -1,0 +1,6 @@
+12×1 = 12 * correct
+10×0 = 0 * correct
+6×0 = 0 * correct
+5×1 = 23 * incorrect (answer was 5)
+10×0 = 0 * correct
+Score: 80%

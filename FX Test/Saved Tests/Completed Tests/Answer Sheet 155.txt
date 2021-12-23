@@ -1,0 +1,11 @@
+12÷3 = 6 * incorrect (answer was 4)
+8÷2 = 4 * correct
+20÷4 = 5 * correct
+20÷2 = 10 * correct
+8÷2 = 4 * correct
+16÷4 = 4 * correct
+36÷4 = 12 * incorrect (answer was 9)
+24÷2 = 12 * correct
+28÷4 = 7 * correct
+8÷2 = 4 * correct
+Score: 80%

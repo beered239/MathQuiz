@@ -1,0 +1,11 @@
+10÷2 = 5 * correct
+6÷1 = 6 * correct
+27÷3 = 32 * incorrect (answer was 9)
+33÷3 = 4 * incorrect (answer was 11)
+15÷3 = 34 * incorrect (answer was 5)
+4÷4 = 32 * incorrect (answer was 1)
+7÷1 = 4 * incorrect (answer was 7)
+36÷3 = 32 * incorrect (answer was 12)
+8÷2 = 423 * incorrect (answer was 4)
+36÷4 = 342 * incorrect (answer was 9)
+Score: 20%

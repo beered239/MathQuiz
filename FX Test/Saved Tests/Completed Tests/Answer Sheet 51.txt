@@ -1,0 +1,6 @@
+10×1 = 10 * correct
+4×0 = 0 * correct
+9×0 = 0 * correct
+4×0 = 0 * correct
+9×1 = 213 * incorrect (answer was 9)
+Score: 80%

@@ -1,0 +1,12 @@
+1×0 = 0 * correct
+12×1 = 12 * correct
+9×0 = 2 * incorrect (answer was 0)
+7×0 = 2 * incorrect (answer was 0)
+10×1 = 2 * incorrect (answer was 10)
+9×0 = 23 * incorrect (answer was 0)
+7×0 = 23 * incorrect (answer was 0)
+1×0 = 23 * incorrect (answer was 0)
+9×1 = 23 * incorrect (answer was 9)
+3×0 = 23 * incorrect (answer was 0)
+4×1 = 23 * incorrect (answer was 4)
+Score: 18.18%

@@ -1,0 +1,5 @@
+11×1 = 11 * correct
+11-1 = 10 * correct
+9˖1 = 10 * correct
+7÷1 = 7 * correct
+7-1 = 6 * correct

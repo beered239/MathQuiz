@@ -1,0 +1,22 @@
+8÷4 = 2 * correct
+6÷3 = 2 * correct
+1÷1 = 1 * correct
+0÷2 = 0 * correct
+0÷2 = 0 * correct
+0÷2 = 0 * correct
+9÷3 = 3 * correct
+16÷2 = 8 * correct
+40÷4 = 10 * correct
+2÷2 = 1 * correct
+8÷1 = 8 * correct
+10÷1 = 10 * correct
+12÷2 = 6 * correct
+20÷4 = 5 * correct
+12÷2 = 6 * correct
+4÷4 = 1 * correct
+11÷1 = 11 * correct
+6+10 = 16 * correct
+11÷1 = 11 * correct
+8÷2 = 4 * correct
+21÷3 = 7 * correct
+Score: 100% Great Job!

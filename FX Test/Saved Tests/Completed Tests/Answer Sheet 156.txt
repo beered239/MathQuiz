@@ -1,0 +1,6 @@
+12÷2 = 6 * correct
+4÷2 = 2 * correct
+28÷4 = 12 * incorrect (answer was 7)
+24÷2 = 12 * correct
+0÷2 = 0 * correct
+Score: 80%

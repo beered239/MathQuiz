@@ -1,0 +1,6 @@
+9×0 = 342 * incorrect (answer was 0)
+9×1 = 343 * incorrect (answer was 9)
+1×0 = 342 * incorrect (answer was 0)
+4×1 = 23 * incorrect (answer was 4)
+12×0 = 3 * incorrect (answer was 0)
+Score: 0%

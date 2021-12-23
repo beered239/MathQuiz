@@ -1,0 +1,11 @@
+9÷1 = 9 * correct
+60÷5 = 12 * correct
+30÷5 = 6 * correct
+0÷1 = 0 * correct
+0÷5 = 0 * correct
+4÷4 = 1 * correct
+4÷4 = 1 * correct
+55÷5 = 11 * correct
+20÷2 = 10 * correct
+27÷3 = 9 * correct
+Score: 100% Great Job!

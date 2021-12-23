@@ -1,0 +1,5 @@
+9÷1 = 23 * incorrect (answer was 9)
+4×1 = 32 * incorrect (answer was 4)
+2-1 = 32 * incorrect (answer was 1)
+7-1 = 3 * incorrect (answer was 6)
+6˖1 = 3 * incorrect (answer was 7)

@@ -1,0 +1,5 @@
+30÷3 = 10 * correct
+14÷2 = 7 * correct
+6÷1 = 6 * correct
+10÷2 = 5 * correct
+Score: 100% Great Job!

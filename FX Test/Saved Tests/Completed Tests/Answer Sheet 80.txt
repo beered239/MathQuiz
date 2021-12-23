@@ -1,0 +1,6 @@
+9×0 = 0 * correct
+7×1 = 324 * incorrect (answer was 7)
+0×1 = 324 * incorrect (answer was 0)
+4×0 = 324 * incorrect (answer was 0)
+6×1 = 6 * correct
+Score: 40%

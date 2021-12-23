@@ -1,0 +1,6 @@
+12÷4 = 324 * incorrect (answer was 3)
+40÷4 = 324 * incorrect (answer was 10)
+48÷4 = 23 * incorrect (answer was 12)
+21÷3 = 23 * incorrect (answer was 7)
+3÷3 = 1 * correct
+Score: 100% Great Job!

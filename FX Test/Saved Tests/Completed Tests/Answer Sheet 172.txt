@@ -1,0 +1,7 @@
+1÷1 = 13 * incorrect (answer was 1)
+24÷3 = 8 * correct
+48÷4 = 12 * correct
+44÷4 = 0 * incorrect (answer was 11)
+4÷4 = 1 * correct
+4÷2 = 2 * correct
+Score: 66.67%

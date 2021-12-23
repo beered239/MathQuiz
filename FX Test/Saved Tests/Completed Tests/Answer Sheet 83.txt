@@ -1,0 +1,6 @@
+9×0 = 343 * incorrect (answer was 0)
+8×1 = 8 * correct
+9×1 = 9 * correct
+3×1 = 21 * incorrect (answer was 3)
+2×1 = 2 * correct
+Score: 60%

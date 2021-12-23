@@ -1,0 +1,6 @@
+5×0 = 22 * incorrect (answer was 0)
+8×0 = 2 * incorrect (answer was 0)
+10×0 = 2 * incorrect (answer was 0)
+11×0 = 2 * incorrect (answer was 0)
+9×0 = 2 * incorrect (answer was 0)
+Score: 0%

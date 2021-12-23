@@ -1,0 +1,6 @@
+10×0 = 3 * incorrect (answer was 0)
+10×0 = 0 * correct
+12×0 = 0 * correct
+9×0 = 0 * correct
+8×0 = 0 * correct
+Score: 80%

@@ -1,0 +1,5 @@
+12÷3 = 4 * correct
+24÷3 = 8 * correct
+6÷2 = 3 * correct
+3÷3 = 1 * correct
+Score: 100% Great Job!

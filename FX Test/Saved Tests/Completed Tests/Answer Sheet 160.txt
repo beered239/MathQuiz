@@ -1,0 +1,6 @@
+3÷1 = 3 * correct
+18÷3 = 213 * incorrect (answer was 6)
+12÷1 = 123 * incorrect (answer was 12)
+1÷1 = 12 * incorrect (answer was 1)
+12÷4 = 3 * correct
+Score: 40%

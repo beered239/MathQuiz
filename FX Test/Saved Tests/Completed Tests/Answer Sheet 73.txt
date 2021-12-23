@@ -1,0 +1,6 @@
+9×0 = 2 * incorrect (answer was 0)
+12×1 = 2 * incorrect (answer was 12)
+3×1 = 2 * incorrect (answer was 3)
+2×1 = 2 * correct
+4×1 = 22 * incorrect (answer was 4)
+Score: 20%

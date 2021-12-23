@@ -1,0 +1,7 @@
+Difficulty Option: 3
+Amount of Questions: 10
+x1 Range Values: (0 ~ 10)
+x2 Range Values: (13 ~ 15)
+y Range Values: (0 ~ 20)
+Practice Value: 9
+Show Correct answer: false

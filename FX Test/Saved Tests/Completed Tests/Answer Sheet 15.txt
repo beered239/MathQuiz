@@ -1,0 +1,5 @@
+7-1 = 1 * incorrect (answer was 6)
+9˖1 = 2 * incorrect (answer was 10)
+5×1 = 3 * incorrect (answer was 5)
+9-1 = 4 * incorrect (answer was 8)
+12÷1 = 5 * incorrect (answer was 12)

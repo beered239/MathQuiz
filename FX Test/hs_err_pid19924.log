@@ -1,0 +1,214 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 268435456 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3467), pid=19924, tid=20764
+#
+# JRE version:  (16.0.1+9) (build )
+# Java VM: OpenJDK 64-Bit Server VM (16.0.1+9, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dfile.encoding=UTF-8 --module-path=A:\Regular Program Files\eclipseOther\workspace - fx\FX Test\bin;C:\Users\Dave R\.p2\pool\plugins\org.eclipse.fx.ide.css.jfx8_3.7.0.202010120832.jar -XX:+ShowCodeDetailsInExceptionMessages -Djdk.module.main=FX FX/quizGen.Launch
+
+Host: AMD Ryzen 5 3600 6-Core Processor              , 12 cores, 15G,  Windows 10 , 64 bit Build 19041 (10.0.19041.1023)
+Time: Sun Aug  1 19:02:19 2021 Eastern Daylight Time elapsed time: 0.015589 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000014f366f82a0):  JavaThread "Unknown thread" [_thread_in_vm, id=20764, stack(0x0000004b14d00000,0x0000004b14e00000)]
+
+Stack: [0x0000004b14d00000,0x0000004b14e00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x67a06a]
+V  [jvm.dll+0x82d359]
+V  [jvm.dll+0x82eae3]
+V  [jvm.dll+0x82f143]
+V  [jvm.dll+0x24efa5]
+V  [jvm.dll+0x676de9]
+V  [jvm.dll+0x66b995]
+V  [jvm.dll+0x3094db]
+V  [jvm.dll+0x310626]
+V  [jvm.dll+0x36073e]
+V  [jvm.dll+0x36096f]
+V  [jvm.dll+0x2e0258]
+V  [jvm.dll+0x2e1494]
+V  [jvm.dll+0x7fef31]
+V  [jvm.dll+0x36e531]
+V  [jvm.dll+0x7dc950]
+V  [jvm.dll+0x3f330f]
+V  [jvm.dll+0x3f50a1]
+C  [jli.dll+0x52ff]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17034]
+C  [ntdll.dll+0x52651]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007fff225553f8, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x0000014f3674b680 GCTaskThread "GC Thread#0" [stack: 0x0000004b14e00000,0x0000004b14f00000] [id=14440]
+  0x0000014f3675ee80 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000004b14f00000,0x0000004b15000000] [id=13872]
+  0x0000014f3675f970 ConcurrentGCThread "G1 Conc#0" [stack: 0x0000004b15000000,0x0000004b15100000] [id=14172]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007fff21cb1117]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x0000014f366f4010] Heap_lock - owner thread: 0x0000014f366f82a0
+
+Heap address: 0x0000000701000000, size: 4080 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 0.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+<Empty>
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000701000000, 0x0000000800000000)
+  region size 2048K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007fff2209418d]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (1 events):
+Event: 0.004 Loaded shared library A:\Regular Program Files\Java\zulu jdk with fx\zulu16.30.15-ca-fx-jdk16.0.1-win_x64\bin\java.dll
+
+
+Dynamic libraries:
+0x00007ff7e4650000 - 0x00007ff7e465e000 	A:\Regular Program Files\Java\zulu jdk with fx\zulu16.30.15-ca-fx-jdk16.0.1-win_x64\bin\javaw.exe
+0x00007fff85cb0000 - 0x00007fff85ea5000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007fff84410000 - 0x00007fff844cd000 	C:\Windows\System32\KERNEL32.DLL
+0x00007fff83900000 - 0x00007fff83bc9000 	C:\Windows\System32\KERNELBASE.dll
+0x00007fff83470000 - 0x00007fff83570000 	C:\Windows\System32\ucrtbase.dll
+0x00007fff76350000 - 0x00007fff7636a000 	A:\Regular Program Files\Java\zulu jdk with fx\zulu16.30.15-ca-fx-jdk16.0.1-win_x64\bin\VCRUNTIME140.dll
+0x00007fff78110000 - 0x00007fff78128000 	A:\Regular Program Files\Java\zulu jdk with fx\zulu16.30.15-ca-fx-jdk16.0.1-win_x64\bin\jli.dll
+0x00007fff84e60000 - 0x00007fff85000000 	C:\Windows\System32\USER32.dll
+0x00007fff82810000 - 0x00007fff82aaa000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\COMCTL32.dll
+0x00007fff83440000 - 0x00007fff83462000 	C:\Windows\System32\win32u.dll
+0x00007fff857c0000 - 0x00007fff8585e000 	C:\Windows\System32\msvcrt.dll
+0x00007fff85310000 - 0x00007fff8533a000 	C:\Windows\System32\GDI32.dll
+0x00007fff835a0000 - 0x00007fff836ab000 	C:\Windows\System32\gdi32full.dll
+0x00007fff83bd0000 - 0x00007fff83c6d000 	C:\Windows\System32\msvcp_win.dll
+0x00007fff85700000 - 0x00007fff85730000 	C:\Windows\System32\IMM32.DLL
+0x00007fff79a30000 - 0x00007fff79a3c000 	A:\Regular Program Files\Java\zulu jdk with fx\zulu16.30.15-ca-fx-jdk16.0.1-win_x64\bin\vcruntime140_1.dll
+0x00007fff55230000 - 0x00007fff552bd000 	A:\Regular Program Files\Java\zulu jdk with fx\zulu16.30.15-ca-fx-jdk16.0.1-win_x64\bin\msvcp140.dll
+0x00007fff219c0000 - 0x00007fff225fb000 	A:\Regular Program Files\Java\zulu jdk with fx\zulu16.30.15-ca-fx-jdk16.0.1-win_x64\bin\server\jvm.dll
+0x00007fff84540000 - 0x00007fff845ec000 	C:\Windows\System32\ADVAPI32.dll
+0x00007fff85860000 - 0x00007fff858fb000 	C:\Windows\System32\sechost.dll
+0x00007fff855d0000 - 0x00007fff856fa000 	C:\Windows\System32\RPCRT4.dll
+0x00007fff85900000 - 0x00007fff85908000 	C:\Windows\System32\PSAPI.DLL
+0x00007fff76960000 - 0x00007fff76969000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007fff78ea0000 - 0x00007fff78ec7000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007fff7c300000 - 0x00007fff7c30a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007fff850c0000 - 0x00007fff8512b000 	C:\Windows\System32\WS2_32.dll
+0x00007fff80570000 - 0x00007fff80582000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x00007fff78400000 - 0x00007fff7840a000 	A:\Regular Program Files\Java\zulu jdk with fx\zulu16.30.15-ca-fx-jdk16.0.1-win_x64\bin\jimage.dll
+0x00007fff82e20000 - 0x00007fff83004000 	C:\Windows\SYSTEM32\DBGHELP.DLL
+0x00007fff82d70000 - 0x00007fff82d9c000 	C:\Windows\SYSTEM32\dbgcore.DLL
+0x00007fff83870000 - 0x00007fff838f3000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007fff76250000 - 0x00007fff76275000 	A:\Regular Program Files\Java\zulu jdk with fx\zulu16.30.15-ca-fx-jdk16.0.1-win_x64\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;A:\Regular Program Files\Java\zulu jdk with fx\zulu16.30.15-ca-fx-jdk16.0.1-win_x64\bin;C:\Windows\SYSTEM32;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e;A:\Regular Program Files\Java\zulu jdk with fx\zulu16.30.15-ca-fx-jdk16.0.1-win_x64\bin\server
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 --module-path=A:\Regular Program Files\eclipseOther\workspace - fx\FX Test\bin;C:\Users\Dave R\.p2\pool\plugins\org.eclipse.fx.ide.css.jfx8_3.7.0.202010120832.jar -XX:+ShowCodeDetailsInExceptionMessages -Djdk.module.main=FX 
+java_command: FX/quizGen.Launch
+java_class_path (initial): .
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 3                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 10                                        {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 2097152                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 268435456                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 4278190080                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 2097152                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5839372                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122909434                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122909434                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool ShowCodeDetailsInExceptionMessages       = true                                   {manageable} {command line}
+   size_t SoftMaxHeapSize                          = 4278190080                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-16.0.1
+CLASSPATH=.
+PATH=C:/Users/Dave R/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_15.0.1.v20201027-0507/jre/bin/server;C:/Users/Dave R/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_15.0.1.v20201027-0507/jre/bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\dotnet\;A:\Regular Program Files\Git\cmd;A:\Regular Program Files\Python\Scripts\;A:\Regular Program Files\Python\;C:\Users\Dave R\AppData\Local\Microsoft\WindowsApps;C:\Users\Dave R\.dotnet\tools;A:\Regular Program Files\FFMPEG\ffmpeg-4.3.1-2020-11-08-full_build\bin;A:\Regular Program Files\Git\bin\git.exe;C:\Users\Dave R\AppData\Local\atom\bin;C:\Users\Dave R\AppData\Local\GitHubDesktop\bin;C:\Program Files\Java\jdk-16.0.1\bin;A:\Regular Program Files\visual studio code vscode\Microsoft VS Code\bin;C:\Users\Dave R\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Eclipse;
+USERNAME=Dave R
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 10 , 64 bit Build 19041 (10.0.19041.1023)
+OS uptime: 6 days 3:54 hours
+
+CPU: total 12 (initial active 12) (12 cores per cpu, 2 threads per core) family 23 model 113 stepping 0 microcode 0x0, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4a, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, clmul, bmi1, bmi2, adx, sha, fma, vzeroupper, clflush, clflushopt
+
+Memory: 4k page, system-wide physical 16315M (6039M free)
+TotalPageFile size 26315M (AvailPageFile size 134M)
+current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
+current process commit charge ("private bytes"): 64M, peak: 320M
+
+vm_info: OpenJDK 64-Bit Server VM (16.0.1+9) for windows-amd64 JRE (16.0.1+9) (Zulu16.30+15-CA), built on Apr 27 2021 03:43:52 by "zulu_re" with MS VC++ 16.8 (VS2019)
+
+END.

@@ -1,0 +1,11 @@
+8×1 = 8 * correct
+2×1 = 2 * correct
+10×0 = 0 * correct
+2×1 = 2 * correct
+1×1 = 1 * correct
+9×1 = 9 * correct
+8×0 = 0 * correct
+3×0 = 0 * correct
+11×1 = 11 * correct
+0×0 = 0 * correct
+Score: 100% Great Job!

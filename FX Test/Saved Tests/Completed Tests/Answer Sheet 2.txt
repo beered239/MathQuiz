@@ -1,0 +1,5 @@
+10÷1 = 10 * correct
+07×1  = 07 * correct
+10˖1 = 11 * correct
+06-1  = 05 * correct
+09-1  = 08 * correct
