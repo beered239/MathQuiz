@@ -1,0 +1,137 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.root{
+
+	-fx-background-color: transparent;
+	-fx-text-fill: white;
+}
+
+#AdditionGrid{
+	
+}
+
+#grid{
+}
+
+
+.label{
+	-fx-text-fill: #A7B2DC;
+}
+
+#title{
+	-fx-font-size: 1.5em;
+}
+
+#input{
+		/*border and background */
+		-fx-background-color: rgba(67,79,115,0.6);
+		-fx-border-color: #171920;
+		-fx-border-radius: 5;
+		-fx-background-radius: 8;
+	/*text*/	
+		-fx-text-fill:white;
+		-fx-alignment: center;
+		
+		-fx-padding: 0.23em 0 0.23em 0;
+		
+}
+#input:focused{
+	-fx-border-color: #5FF6A8;
+}
+
+#settingTitle{
+	-fx-padding: 0 0 0 0em;
+}
+
+#boxLimit{
+	-fx-max-height: 0.9em; /*doesn't seem to work/affect anything */
+	-fx-max-width: 8.3em;
+	-fx-min-width: 8.3em;
+	
+	-fx-alignment: center-right ;
+	-fx-padding: 0.3em 0 0 0.3em;
+	/*-fx-border-color: white;/*debug*/
+}
+
+
+
+/*styling the dropbox menu */
+
+.combo-box-popup> .list-view{
+	-fx-background-color: #1C1F22;					/*outer border controlled by this property */
+	/*-fx-background-radius: 0 0 1em 1em; 	/*don't add curves until you know what container needs to be curved as well */
+}
+
+
+/*==============START OF ELEMENTS THAT AREN'T NEEDED==================*/
+
+/*the combo box popup element doesn't seem to be affected by much */
+/*an outside container that contains what will contain the actual list? */
+.combo-box-popup > .list-view{
+}
+
+/*3 container inside the main container of the list: contains the actual list/list cells*/
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container {
+	/*
+	-fx-border-color: red;
+	-fx-border-width: 5;
+	-fx-border-radius: 20px; 
+	  */
+}
+/*=============================END================================== */
+
+
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell {
+    -fx-padding: 4 0 4 5;
+    /* No alternate highlighting */
+    -fx-background: rgba(16,18,19,0.6);/*blue-grey hint */		/*affects background... not background color... of the list going down */
+
+}
+
+
+
+/*Styling for the comboboxe's base/box that shows what is selected */
+/*__________________________________________________________________ */
+.combo-box-base,
+.combo-box-base:editable > .arrow-button {
+    /*-fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, rgba(67,79,115,0.6); */
+    -fx-background-color: rgba(67,79,115,0.6);	/*slight transparent blue */
+    -fx-accent: transparent;
+    -fx-border-radius: 5;
+	-fx-border-width: 0.08em;
+}
+.combo-box-base:focused{
+	-fx-border-color: #5FF6A8;
+	-fx-padding: 0px;
+}
+/*text of label of combobox */
+	.combo-box .list-cell{
+		-fx-text-fill:white;
+		/*-fx-padding: 0.333333em -0.6em 0.333333em 0.666667em; /* 4 8 4 8 */		/*removes some of the padding btw the arrow and text */
+		-fx-padding: 0.23em -0.6em 0.23em 0.4em;		/*1em -> 15 0.066em -> 1px */
+	}
+
+
+/*simplify arrow look */
+.choice-box > .open-button > .arrow,
+.menu-button:openvertically > .arrow-button > .arrow,
+.split-menu-button:openvertically > .arrow-button > .arrow,
+.combo-box-base > .arrow-button > .arrow,
+.web-view .form-select-button .arrow,
+.tab-pane > .tab-header-area > .control-buttons-tab > .container > .tab-down-button > .arrow  {
+    -fx-background-color: black;
+    /*
+    -fx-background-insets: 0 0 -1 0, 0;
+    -fx-padding: 0.166667em 0.333333em 0.166667em 0.333333em; 
+    -fx-shape: "M 0 0 h 7 l -3.5 4 z"; 
+      */
+}
+
+
+/*SAVE BUTTON STYLING */
+#saveButton{
+}
+
+/*note: fxml sets the rows to never grow vertically, might change this if resizing becomes a goal */
+
+/*top right bottom left */
+/*em:  */

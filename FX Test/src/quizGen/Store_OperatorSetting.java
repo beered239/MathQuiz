@@ -3,6 +3,7 @@ package quizGen;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import custom_element.OPSettingsGrid;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -18,6 +19,10 @@ import javafx.scene.text.Text;
 
 public class Store_OperatorSetting extends Store_Setting{
 
+	//static constant? variables used by all of the objects made with this class
+		public static final int[] indexesForSetting = {0,3,5};
+	
+	
     //x2 range
         public Integer[] x2Range;   //custom range r1-r2 for pt2
         //public File fileDir;    //
@@ -474,4 +479,25 @@ public class Store_OperatorSetting extends Store_Setting{
 
     }
 
+    /*=======================================Method(s) to interact with the custom component that replaces the grid here=============================================*/
+    /**Loads the settings saved in ram to the operator grid gui (ram values should have recently been updated in the controller class where this is used)
+     * @param operatorGrid the custom component for the gui where the user can change the settings related to this class
+     */
+    public void loadToOperatorGrid(OPSettingsGrid operatorGrid) {
+    	operatorGrid.loadFields(values.get(0), ""+x2Range[0], ""+x2Range[1], values.get(5));
+    }
+    
+    public void saveSettings(OPSettingsGrid operatorGrid) {
+    	String[] opSValues = {
+				(operatorGrid.getDifficultySelectionIndex()+1)+"",
+				"(" + operatorGrid.getRangeTf1().getText() + "~" +operatorGrid.getRangeTf2().getText() + ")",
+				operatorGrid.getPracticeValTf().getText()
+		};
+		try {
+			changeSettingsLines(indexesForSetting, opSValues);	//0 3 5
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+    }
+    
 }

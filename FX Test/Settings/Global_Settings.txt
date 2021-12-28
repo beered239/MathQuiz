@@ -1,4 +1,4 @@
-Addition: 5
+Addition: 12
 Subtraction: 0
 Multiplication: 0
 Division: 0

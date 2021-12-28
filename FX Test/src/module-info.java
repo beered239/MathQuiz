@@ -7,4 +7,6 @@ module FX{
 	opens application to javafx.graphics, javafx.fxml;
 
 	opens settings_window to javafx.graphics, javafx.fxml;
+	
+	opens custom_element to javafx.graphics, javafx.fxml;
 }

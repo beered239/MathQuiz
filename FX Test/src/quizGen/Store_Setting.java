@@ -280,7 +280,7 @@ public class Store_Setting {
          * @param valueIR the setting line being put in to get the two range values ex: (0 ~ 144)
          * */
         //public Integer[] x2Range; already saved in each operator
-        public Integer[] getRangeValuesFromSetting(String valueIR){
+        public static Integer[] getRangeValuesFromSetting(String valueIR){
             //maybe make an if statement for if the valueIR is the default n/a value or something
             Integer[] range = new Integer[2];
             int midIndex = valueIR.indexOf("~");
@@ -488,23 +488,23 @@ public class Store_Setting {
     public void changeSettingsLines(int[] indexes, String[] valuesS) throws IOException{
         int i =0, k=0, kS=0;//ks is k saved
         outFile = new PrintWriter(fileDir);
-        
         //Display.arrayS(names);	//debug
         
         for(i=0; i<values.size(); i++) {
         	
         	if(k<indexes.length) {
-        		if(i == indexes[i]) {
+        		if(i == indexes[k]) {
         			outFile.println(names.get(i) + " " + valuesS[k]);
-        			k++;
+        			k++; 
         		}//current line is one that needs to be changed
+        		else {
+            		outFile.println(names.get(i) + " " + values.get(i));
+            	}
         	}
         	else {
         		outFile.println(names.get(i) + " " + values.get(i));
         	}
-        	
         }
-            
         outFile.close();
     }
     

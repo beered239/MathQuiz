@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import custom_element.OPSettingsGrid?>
 
 
 <GridPane stylesheets="@application.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="settings_window.Controller">
@@ -82,30 +83,38 @@
             </Tab>
           <Tab text="Addition">
             <content>
-              <AnchorPane fx:id="aPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <HBox prefHeight="100.0" prefWidth="200.0">
-                           <children>
-                              <Label text="" />
-                           </children>
-                        </HBox>
-                     </children>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+              			<OPSettingsGrid fx:id="additionGrid" settingNameText="Addition Settings"></OPSettingsGrid>
+              		</children>
                   </AnchorPane>
             </content>
           </Tab>
             <Tab text="Subtraction">
               <content>
-                <AnchorPane fx:id="sPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                <AnchorPane fx:id="sPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                	<children>
+              			<OPSettingsGrid fx:id="subtractionGrid" settingNameText="Subtraction Settings"></OPSettingsGrid>
+              		</children>
+                </AnchorPane>
               </content>
             </Tab>
             <Tab text="Multiplication">
               <content>
-                <AnchorPane fx:id="mPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                <AnchorPane fx:id="mPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                	<children>
+              			<OPSettingsGrid fx:id="multiplicationGrid" settingNameText="Multiplication Settings"></OPSettingsGrid>
+              		</children>
+                </AnchorPane>
               </content>
             </Tab>
             <Tab text="Division">
               <content>
-                <AnchorPane fx:id="dPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                <AnchorPane fx:id="dPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                	<children>
+              			<OPSettingsGrid fx:id="divisionGrid" settingNameText="Division Settings"></OPSettingsGrid>
+              		</children>
+                </AnchorPane>
               </content>
             </Tab>
         </tabs>

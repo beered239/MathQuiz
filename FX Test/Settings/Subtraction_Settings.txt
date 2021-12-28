@@ -1,4 +1,4 @@
-Difficulty Option: 4
+Difficulty Option: 1
 Amount of Questions: 5
 x1 Range Values: (0 ~ 20)
 x2 Range Values: (0 ~ 11)
