@@ -1,9 +1,9 @@
 package settings_window;
 
 import java.io.IOException;
-import java.text.DecimalFormat;
 import java.util.function.UnaryOperator;
 
+import custom_elements.TfFilter;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
@@ -24,47 +24,23 @@ public class Controller {
 		
 		//create custom textfields
 			//decimal format
-				DecimalFormat dFormat = new DecimalFormat("#.0");	//confused about the parameter (doesn't seem to make a difference)
+				//DecimalFormat dFormat = new DecimalFormat("#.0");	//confused about the parameter (doesn't seem to make a difference)
 				//NumberFormat iFormat = new NumberFormat("#");
 				
 				
 			//text formatter using unary operator
-				UnaryOperator<Change> filter = change -> {
-					String text = change.getControlNewText();//change.getText();
-					if(text.isEmpty())
-						return change;
-					
-					//if((filter123.fixD(text)+"").matches(text)) {	return change;}
-					
-					if(text.length() > 5) {return null;}	//character limiter
-					
-					//int formatter
-						if(text.matches("[0-9]*")) 	{return change;}				//my decimal+negative formatter  ->  text.matches("[0-9/.-]*")
-						
-						
-						return null;
-					
-					//decimal formatter
-						//ParsePosition parsePosition = new ParsePosition(0);
-						//Object obj = dFormat.parseObject(text,parsePosition);					
-						//if(obj == null || parsePosition.getIndex() < text.length()) {return null;}
-							//else {return change;}
-					
-				};
-				/*Some notes:
-				 * 		regex * means that there is no limit to how many characters you can have from that [] range? -> match 0 or more []'s
-				 * 		
-				 * */
+				TfFilter numFilter = new TfFilter();
+				numFilter.create(5, "[0-9]*");
+				UnaryOperator<Change> filter = numFilter.getFilter();
+		
 				//add the formatter to each textfield
-					TextFormatter<String> textFormatter = new TextFormatter<>(filter);
-					TextFormatter<String> textFormatter2 = new TextFormatter<>(filter);
-					TextFormatter<String> textFormatter3 = new TextFormatter<>(filter);
-					TextFormatter<String> textFormatter4 = new TextFormatter<>(filter);
+					//TextFormatter<String> textFormatter = new TextFormatter<>(filter);   --> what I used before
+					
 					//add formatter to the textfields
-						tfNumOfA.setTextFormatter(textFormatter);
-						tfNumOfS.setTextFormatter(textFormatter2);
-						tfNumOfM.setTextFormatter(textFormatter3);
-						tfNumOfD.setTextFormatter(textFormatter4);
+						tfNumOfA.setTextFormatter(new TextFormatter<>(filter));
+						tfNumOfS.setTextFormatter(new TextFormatter<>(filter));
+						tfNumOfM.setTextFormatter(new TextFormatter<>(filter));
+						tfNumOfD.setTextFormatter(new TextFormatter<>(filter));
 				//initialize each textfield with the current values (can get this from file or saved values array in GlobalS) choose: file, b/c boot is no longer initialized here
 					//note: makes GlobalS reread the setting file
 						setTfText();
@@ -86,7 +62,10 @@ public class Controller {
 				//System.out.println("I've been called");//debug
 			//gPane.getChildren().add(Boot.globalSettingsPane);	//will be made here (using scenebuilder)
 				
-				
+			
+			/*
+			 * 
+			 * */
 			aPane.getChildren().add(Boot.AdditionS.settingsGrid);
 			sPane.getChildren().add(Boot.SubtractionS.settingsGrid);
 			mPane.getChildren().add(Boot.MultiplicationS.settingsGrid);
