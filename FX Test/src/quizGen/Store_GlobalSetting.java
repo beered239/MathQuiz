@@ -1,7 +1,5 @@
 package quizGen;
 
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javafx.geometry.Insets;
@@ -18,18 +16,7 @@ public class Store_GlobalSetting extends Store_Setting{
         super(fileNameS);
     }
 
-    /**@note: instead of creating the whole layout (it's in main) this will update on action of entering submit
-     * @note: variables needed:     submitSettingsButtonB, settingInputsLA[]
-     * @note: specific for this programs questions global settings
-     * */
-    public void submitGlobalChanges() throws IOException{
-        //Boot.basicInputA
-        outFile = new PrintWriter(fileDir);
-        for(int i=0; i<values.size(); i++){
-            outFile.println(names.get(i) + " " + Boot.basicInputA[i].getText());
-        }
-        outFile.close();
-    }
+    
 
     public void addCorrectValue(){
 
