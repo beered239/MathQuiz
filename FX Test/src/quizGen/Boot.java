@@ -180,7 +180,7 @@ public class Boot{
                 public static String[] globalSDefaultNames = {"Addition:", "Subtraction:", "Multiplication:", "Division:","Indicate if answer was correct:","Display Scores On Screen:"};  //not used yet
             public static Store_OperatorSetting DivisionS;
                 public static String[] divSDefaultVals =    {"2","10","(1 ~ 144)","(1 ~ 12)","(1 ~ 12)","no","yes"};
-                public static String[] divSTypes  =          {"valueI","valueI","valueIR","valueIR","valueIR","valueIB","valueB"};
+                public static String[] divSTypes  =          {"valueI","valueI","valueIR","valueIR","valueIR","valueB","valueB"};
                 public static String[] divSDefaultNames  = {
                         "Difficulty Option:","Amount of Questions:",
                         "x1 Range Values:","x2 Range Values:","y Range Values:",

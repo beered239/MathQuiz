@@ -13,21 +13,29 @@ import java.util.Scanner;
 /**
  * @purpose: gets info on a single text file based on the object
  */
-public class ReadFiles {
 
+public class ReadFiles {
+	
+	private ReadFiles() {
+		
+	}
+	
     //variables that have info on the file
     //public static int totalLines;          //set this value to the number of lines in the text
     //^ can be found using lines.size();
+	//object to manage files safely
+		public static final WriteFiles FILEWRITER = new WriteFiles();
     //variables to take information from a text file
         public static File fileName;
         public static Scanner inFile;
     //variables that store file data
-        public static ArrayList<String> lines;
+        protected static ArrayList<String> lines;
     //stores the name of the file as a string
         public static String fileNameS;
     //variables needed for counting file (keeps track of number of tests that there have been)
         public static Integer counter;
-        public static final File counterFile = new File( "Times_Ran" + File.separator + "Times_Ran.txt");
+        private static final String COUNTERFILENAME = "Times_Ran" + File.separator + "Times_Ran.txt";
+        public static final File counterFile = new File( COUNTERFILENAME);
             //^ can be changed
 //methods
 
@@ -38,14 +46,14 @@ public class ReadFiles {
      */
     public static void saveToArray(String fileNameInput) throws IOException {
         fileNameS = fileNameInput;
-        lines = new ArrayList<String>();
-        fileName = new File(fileNameS.replaceAll(".txt", "") + ".txt");
+        lines = new ArrayList<>();
+        fileName = FILEWRITER.createOrRetrieve(fileNameS.replaceAll(".txt", "") + ".txt");
         inFile = new Scanner(fileName);
         while (inFile.hasNext()) {
             String txt = inFile.next();
-            txt += inFile.nextLine();
+            if(inFile.hasNextLine())
+            	txt += inFile.nextLine();
             lines.add(txt);
-            //totalLines++;
         }
         inFile.close();
     }
@@ -72,7 +80,9 @@ public class ReadFiles {
     //counter
 
         public static void saveCounter() throws IOException{
-            Scanner inFile = new Scanner(counterFile);  //create a new scanner since the last one was closed?
+            File safeCounterFile = FILEWRITER.createOrRetrieve(COUNTERFILENAME);
+        	Scanner inFile = new Scanner(safeCounterFile);  //create a new scanner since the last one was closed?
+            
             counter = Boot.filter.fixI(inFile.next());
             if(Filter.seeIfInvalid(counter)){
                 counter = 0;

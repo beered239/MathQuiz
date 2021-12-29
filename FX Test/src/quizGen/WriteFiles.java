@@ -1,9 +1,11 @@
 package quizGen;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 //note: specific to this application
@@ -87,6 +89,22 @@ public class WriteFiles {
             fileDirectoriesS.add(fileName);         //remember indexes: 1: empty  tests | 2: saved tests
         }
 
+        /**gets a file safely based on it's directory
+         * */
+        public File createOrRetrieve(final String target) throws IOException{
+            final Path path = Paths.get(target);
+            if(Files.notExists(path)){
+            	PrintWriter pw = new PrintWriter(new File(target));
+            	pw.print("0");
+            	pw.close();
+                return new File(target);//Files.createFile(Files.createDirectories(path)).toFile();
+            }
+            return path.toFile();
+        }
+
+        
+        
+        
     //first: saving question info into two folders
 
 

@@ -113,7 +113,10 @@ public class Store_Setting {
 	                //get name from line and add to it's array
 	                name = line.substring(0, index);     //(does not include the space afterwards)
 	                names.add(name);
-	            }//avoids non setting lines
+	            }//avoids non setting lines		update: non setting lines get deleted anyways, use else to correct errors
+	            else {
+					correctErrors();	//might not be needed
+				}
 	                /*
 	                 *else{
 	                    values.add("  ");
@@ -121,7 +124,8 @@ public class Store_Setting {
 	                }//adds the setting line and an empty value with it (just to recreate file as is when changing it )
 	                 **/
 	            //counter++;
-        }
+	        }
+	        
     }
 
 
@@ -158,6 +162,7 @@ public class Store_Setting {
             false is shown later in upper method using the null that was returned*/
     /**@purpose: to see if a string value meant true or false
      * @param value the value being tested against the library of acceptable terms
+     * @note: technically this covers an integer being boolean and then checks the dictionary to see if the string is boolean (valueB is better than valueIB)
      * */
     public Boolean interpretValueB(String value){
         //filter class used to check if the boolean sections have numbers
@@ -172,21 +177,12 @@ public class Store_Setting {
 	        else if(valueI==0)
 	        	return false;
         //check bool dictionary (longer)
-        	int i=0; 
-        	while(i<booleanDictionary.length) {
-        		if(value.equalsIgnoreCase(booleanDictionary[i])) {
-        			if(i%2==0) {
-                		return true;
-                	}//if even index -> true
-        			else
-        				return false;
-        		}
-        		i++;
-        	}
+        	Boolean check = trueOrFalse(value);
+	        if(check != null)
+	        	return check;
         	
         //check if num is invalid(last b/c word's will automatically be invalid)
         	if(Filter.seeIfInvalid(valueI))	return false;
-        
         
         return null;   //ASSUMES FALSE DESPITE NO MATCHES BEING FOUND
     }
@@ -220,8 +216,17 @@ public class Store_Setting {
      * */
     public Integer interpretValueIB(String value){
         int valueI = stringToI(value);
-        if(Filter.seeIfInvalid(valueI) || valueI<0)    /*->*/        return 0;
-        else                               /*->*/        return valueI; //values.get(indexStart+i);
+        //System.out.println("Interperted value IB: " + valueI);	//debug invisible
+        Boolean check = trueOrFalse(value);
+        if(valueI>=0)
+        	return valueI;
+        else if(!Boolean.TRUE.equals(check))
+        	return 0;
+        else if(Filter.seeIfInvalid(valueI))    /*->*/        return -1;
+        
+        else
+        	return null;
+        
     }
 
     /**@purpose: returns an integer for the string setting inputted, or null if it is not valid (can be used to change value to default)
@@ -230,6 +235,7 @@ public class Store_Setting {
      * */
     public Integer interpretValueI(String value){
         int valueI = stringToI(value);
+        //System.out.println("value was actually: " + valueI);	//debug invisible
         if(Filter.seeIfInvalid(valueI) )    /*->*/        return null;
         else                               /*->*/        return valueI; //values.get(indexStart+i);
     }
@@ -239,8 +245,10 @@ public class Store_Setting {
          * @param value a string value about to be turned to an integer
          * */
         private int stringToI(String value){
+        	//System.out.println("string: " + value);	//debug invisible
             Filter filtNum = new Filter();
             filtNum.setBasedRounding(true);
+            //System.out.println("true test: " + filtNum.fixI("0") + " and " + value);	//debug invisible
             return filtNum.fixI(value);
         }
 
@@ -298,6 +306,23 @@ public class Store_Setting {
             return range;
         }
         
+        /**string compared against boolean dictionary to see if it is true, false, or neither/null
+         * @param value the string value being compared
+         * */
+        private Boolean trueOrFalse(String value) {
+        	int i=0; 
+        	while(i<booleanDictionary.length) {
+        		if(value.equalsIgnoreCase(booleanDictionary[i])) {
+        			if(i%2==0) {
+                		return true;
+                	}//if even index -> true
+        			else
+        				return false;
+        		}
+        		i++;
+        	}
+        	return null;
+        }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -316,10 +341,11 @@ public class Store_Setting {
         //change txt file if corrections were needed: 
         	
         	if(numOfErrorFixes>0) {
-        		System.out.println("Making setting file corrections...");	//debug visible
-		        String[] valuesS = values.toArray(new String[0]);
+        		System.out.println("Making setting file corrections... " + numOfErrorFixes);	//debug visible
+        		Display.arrayS(values);
+		        //String[] valuesS = values.toArray(new String[0]);
         		try {
-					changeSettingsLines(valuesS);
+					changeSettingsLines(defaultSettingValuesA);
 				} 
 		        	catch (IOException e) {e.printStackTrace();}
         	}
@@ -334,7 +360,7 @@ public class Store_Setting {
 
     	int numOfErrors = 0;
     	
-        if(lines.size() != settingTypeA.length)    {changeValuesToDefault(); return 1;}
+        if(values == null || values.size() != settingTypeA.length)    {changeValuesToDefault(); return 1;}
         
         //System.out.println("number of active lines: " + lines.size());	//debug (invis)
         
@@ -348,7 +374,7 @@ public class Store_Setting {
             if(currentSettingType.equalsIgnoreCase("valueB")){
                 valueB = interpretValueB(currentValue);
                 
-                //System.out.println("correcting value b: " + currentValue + " sent as: " + valueB);//debug
+                //System.out.println("correcting value b: " + currentValue + " sent as: " + valueB);//debug invisible
                 
                 if(valueB == null) {
                 	values.set(i,defaultSettingValuesA[i]);
@@ -358,8 +384,8 @@ public class Store_Setting {
                     values.set(i,valueB.toString());
             }
             else if(currentSettingType.equalsIgnoreCase("valueIB")) {
-                valueIB = interpretValueIB(currentValue);
-                if (valueIB == 0) {
+            	valueIB = interpretValueIB(currentValue);
+                if (valueIB == null || valueIB == -1) {
                 	values.set(i, defaultSettingValuesA[i]);
                 	numOfErrors++;
                 }//note: valueIB can't be null if value is gibberish it will become 0
@@ -385,7 +411,7 @@ public class Store_Setting {
                     values.set(i,valueIR);
             }
         }
-        
+         //System.out.println("Number of invalid Values: " + numOfErrors);	//debug visible
         return numOfErrors;
     }
             /**used only in ^
@@ -394,7 +420,9 @@ public class Store_Setting {
              * */
             private void changeValuesToDefault(){
                 //System.arraycopy(defaultSettingValuesA,0,values.toArray(),0,defaultSettingValuesA.length);
-                values = new ArrayList<String>(Arrays.asList(defaultSettingValuesA));
+                if(values != null)
+                	values.clear();
+            	values = new ArrayList<>(Arrays.asList(defaultSettingValuesA));
             }
     /**@purpose: to change the names string array values with the set defaults if they are invalid
      * @apiNote fixes any typo/wrong labels in the names array
@@ -402,7 +430,7 @@ public class Store_Setting {
         private int correctInvalidNames(){
             int numOfErrors = 0;
         	
-        	if(lines.size() != defaultSettingNamesA.length) {changeNamesToDefault(); return 1;}
+        	if(names == null || names.size() != defaultSettingNamesA.length) {changeNamesToDefault(); return 1;}
             String currentName, currentDefName;
             for(int i=0; i<names.size(); i++){
                 currentName = names.get(i);
@@ -420,8 +448,10 @@ public class Store_Setting {
              * @apiNote to change the names to their default values
              * */
             private void changeNamesToDefault(){
-        names = new ArrayList<String>(Arrays.asList(defaultSettingNamesA));     //note: no need to clear array when copied over
-    }
+            	if(names != null)
+            		names.clear();
+            	names = new ArrayList<>(Arrays.asList(defaultSettingNamesA));     //note: no need to clear array when copied over
+            }
 
     //methods that set arrays: default names and values, type of value
             public void setCorrectFileInfo(String[] settingTypes, String[] settingNames, String[] settingValues){
