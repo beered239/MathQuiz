@@ -3,6 +3,7 @@ package quizGen;
 import java.io.IOException;
 
 import custom_element.OPSettingsGrid;
+import custom_elements.KeyActions;
 
 public class Store_OperatorSetting extends Store_Setting{
 
@@ -275,6 +276,7 @@ public class Store_OperatorSetting extends Store_Setting{
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
+		KeyActions.goToNextFocusable();
     }
     
 }

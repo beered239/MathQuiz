@@ -3,6 +3,7 @@ package custom_element;
 import java.io.IOException;
 import java.util.function.UnaryOperator;
 
+import custom_elements.KeyActions;
 import custom_elements.TfFilter;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.StringProperty;
@@ -20,7 +21,6 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.robot.Robot;
 
 //import javafx.scene.control.cell.ComboBoxTableCell;
 
@@ -33,11 +33,10 @@ public class OPSettingsGrid extends GridPane{
 				public FXMLLoader getSettingLoader() {
 					return fxmlLoader;
 				}
-		private Robot userInput;
 		private TfFilter numFilter;
 	  
 	  //fxml elements that will be used
-	  	@FXML
+		@FXML
 	  	private ComboBox<String> difficultySelection;
 	  	@FXML
 	  	private HBox rangeBoxX2;
@@ -69,7 +68,6 @@ public class OPSettingsGrid extends GridPane{
 		        }
 		        
 		        //initialize object that are needed
-		        	userInput = new Robot();//used to emulate key presses
 		        	//numFilter = new TfFilter();	//used to add a filter to the textfields		can't be setup here
 		  }
 	  //initializer	
@@ -117,10 +115,8 @@ public class OPSettingsGrid extends GridPane{
 			  	});
 			  	//difficultySelection.setF
 			  	difficultySelection.setOnKeyPressed( e -> difficultySelectionHandleKeyPress(e));
+			  	this.setOnKeyPressed(e -> KeyActions.nextComponentAction(e.getCode()));	//by default clicking enter switches the focus to the next focusable component
 			  	
-			  	rangeTF1.setOnKeyPressed(e -> nextComponentAction(e.getCode()));
-			  	rangeTF2.setOnKeyPressed(e -> nextComponentAction(e.getCode()));
-			  	practiceValTF.setOnKeyPressed(e -> nextComponentAction(e.getCode()));
 		  }
 		  
       //Methods for the Title of the setting
@@ -176,18 +172,7 @@ public class OPSettingsGrid extends GridPane{
 		  			difficultySelection.show();
 		  			//System.out.println("down pressed");	//debug hidden
 		  		}
-		  		
-		  		if(keyPressed == KeyCode.ENTER) {
-		  			nextComponentAction(keyPressed);	//better then requesting focus of the next texfield b/c it might be disabled
-		  		}
-		  }
-		  
-		  /** if 'enter' is pressed a tab press is called to switch to focus on the next focusable/visible component 
-		   * @param keyPressed a keycode usually taken from a KeyEvent using .getCode
-		   */
-		  private void nextComponentAction(KeyCode keyPressed ) {
-			  if(keyPressed == KeyCode.ENTER)
-				  userInput.keyPress(KeyCode.TAB);
+		  		KeyActions.nextComponentAction(keyPressed);
 		  }
 
 	//startup method
@@ -208,5 +193,15 @@ public class OPSettingsGrid extends GridPane{
     public Button getSaveButton() {
     	return saveButton;
     }
+    
+    /**action ran when the save button is clicked
+     * @apiNote in this case it is overridden by the settings controllers which has it's own listeners (program dependent)
+     * @apiNote default is to switch over to the next component after enter
+     * */
+    @FXML
+    protected void saveClicked() {
+    	//KeyActions.goToNextFocusable();	//commented out b/c in the math program it is overridden
+    }
+    
     
 }

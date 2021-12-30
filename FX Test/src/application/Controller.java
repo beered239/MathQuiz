@@ -119,7 +119,7 @@ public class Controller {
 		void updateQuestionLabel(String newQuestion){
 			question.setText(newQuestion);
 		}
-	/**@apiNote enables the button and resets certain things to */
+	/**@apiNote enables the button and resets (on action) certain things to */
 		@FXML
 		void startNewQuiz() {
 			//maybe use new objects and create a new Boot object????? ... might need to recreate the way the boot class works...
@@ -238,7 +238,7 @@ public class Controller {
 		                questionNum.setText("[empty]");
 	                    //show button to start a new quiz
 	                    	startNewQuiz();
-	                    //exitBtn.setDisable(false);											//enable the close button from the menu
+	                    closeItem.setDisable(false);											//enable the close button from the menu
 	                }//writes all responses to files, disables input
 	                else{
 	                    nextQuestion = quizGen.Operators.allQuestions.get(questionIndex+1);
@@ -266,7 +266,7 @@ public class Controller {
 	@FXML GridPane gp;
 	
 	
-	@FXML MenuItem closeItem;
+	@FXML MenuItem closeItem;	//button in navigation bar that closes the program
 	@FXML MenuItem reset;
 
 	/**
@@ -328,6 +328,7 @@ public class Controller {
 				questionNum.setText("Question: 1");
 				try {
 					question.setText(Operators.allQuestions.get(0).toString());
+					closeItem.setDisable(true);
 				} catch (Exception e) {
 					// TODO: handle exception
 					AlertBox noQuestions = new AlertBox();
@@ -390,6 +391,7 @@ public class Controller {
 	
 	//other important variables:
 		@FXML MenuItem exitButton;
+		
 		
 	
 		//labels for score info , question, and question num

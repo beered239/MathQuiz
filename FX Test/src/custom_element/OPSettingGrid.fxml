@@ -54,7 +54,7 @@
    </HBox>
    
    
-   <Button id="saveButton" fx:id="saveButton" minWidth="80.0" mnemonicParsing="false" text="Save Changes" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+   <Button id="saveButton" fx:id="saveButton" minWidth="80.0" onAction="#saveClicked" mnemonicParsing="false" text="Save Changes" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
    <columnConstraints>
       <ColumnConstraints />
       <ColumnConstraints />

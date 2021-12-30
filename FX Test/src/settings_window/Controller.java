@@ -4,11 +4,13 @@ import java.io.IOException;
 import java.util.function.UnaryOperator;
 
 import custom_element.OPSettingsGrid;
+import custom_elements.KeyActions;
 import custom_elements.TfFilter;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
 import javafx.scene.control.TextFormatter.Change;
@@ -55,10 +57,8 @@ public class Controller {
 			//note: save current scores in scorebox first before ini?
 						
 			try {
-				//Boot.initialize();
 				Boot.updateSettingObjects();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			//load content to each operator grid
@@ -79,7 +79,11 @@ public class Controller {
 				//setup connection btw app controller and setting controller
 					application.Controller appController = application.Main.getAppLoader().getController();
 					
+				//whole tab pane listener to use enter action
+					tabPane.setOnKeyPressed(e -> KeyActions.nextComponentAction(e.getCode()));
+					
 				//cosmetics pane (changes txt and ram)
+					
 					cBoxHighlightTF.selectedProperty().addListener((observable, oldValue, newValue) -> {
 						String showS = newValue.toString();
 						appController.changeHighlightB(showS);
@@ -92,6 +96,7 @@ public class Controller {
 					});
 					
 				//listen to the buttons of each setting grid
+					//global setting button has it's own method in this class
 					additionGrid.getSaveButton().setOnAction( e -> Boot.AdditionS.saveSettings(additionGrid));	//saves to file
 					subtractionGrid.getSaveButton().setOnAction( e -> Boot.SubtractionS.saveSettings(subtractionGrid));
 					multiplicationGrid.getSaveButton().setOnAction( e -> Boot.MultiplicationS.saveSettings(multiplicationGrid));
@@ -144,6 +149,7 @@ public class Controller {
 				Boot.GlobalS.changeSettingsLines(indexes, createValueArray());
 			} 		
 				catch (IOException e) {e.printStackTrace();}
+			KeyActions.goToNextFocusable();
 		}
 			/**@apiNotecreates values array for global settings*/
 				private String[] createValueArray(){
@@ -162,5 +168,7 @@ public class Controller {
 					@FXML AnchorPane sPane;
 					@FXML AnchorPane mPane;
 					@FXML AnchorPane dPane;	//might need
+				//tab pane to add enter action to program
+					@FXML TabPane tabPane;
 		
 }
