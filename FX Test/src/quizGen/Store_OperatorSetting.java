@@ -3,7 +3,6 @@ package quizGen;
 import java.io.IOException;
 
 import custom_element.OPSettingsGrid;
-import custom_elements.KeyActions;
 
 public class Store_OperatorSetting extends Store_Setting{
 
@@ -263,20 +262,27 @@ public class Store_OperatorSetting extends Store_Setting{
      */
     public void loadToOperatorGrid(OPSettingsGrid operatorGrid) {
     	operatorGrid.loadFields(values.get(0), ""+x2Range[0], ""+x2Range[1], values.get(5));
+    	System.out.println("loading these");
+    	Display.arrayS(values);
+    	System.out.println("end");
     }
     
     public void saveSettings(OPSettingsGrid operatorGrid) {
     	String[] opSValues = {
 				(operatorGrid.getDifficultySelectionIndex()+1)+"",
 				"(" + operatorGrid.getRangeTf1().getText() + "~" +operatorGrid.getRangeTf2().getText() + ")",
-				operatorGrid.getPracticeValTf().getText()
+				operatorGrid.getPracticeValTf().getText()+ "d "
 		};
+    	
+    	System.out.println("printing these values to the text file: ");
+    	for(String s: opSValues)
+    		System.out.println(s);
 		try {
 			changeSettingsLines(indexesForSetting, opSValues);	//0 3 5
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
-		KeyActions.goToNextFocusable();
+		//KeyActions.goToNextFocusable();
     }
     
 }

@@ -185,7 +185,9 @@ public class OPSettingsGrid extends GridPane{
 			  //both range textfields
 			  	rangeTF1.textProperty().setValue(rangeVal1);
 			  	rangeTF2.textProperty().setValue(rangeVal2);
-			  practiceValTF.textProperty().setValue(practiceVal); //doessn't use the property methods that the combo component has
+			  practiceValTF.textProperty().setValue(practiceVal); //doesn't use the property methods that the combo component has
+			  if(practiceValTF.textProperty().getValue().equals(""))
+				  practiceValTF.setPromptText("none");
 		  }
 		  
     @FXML Button saveButton;
@@ -201,6 +203,7 @@ public class OPSettingsGrid extends GridPane{
     @FXML
     protected void saveClicked() {
     	//KeyActions.goToNextFocusable();	//commented out b/c in the math program it is overridden
+    	//not written in fxml
     }
     
     
