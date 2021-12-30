@@ -62,8 +62,6 @@ public class Controller {
 				e.printStackTrace();
 			}
 			//load content to each operator grid
-			//System.out.println("values");
-			//Display.arrayS(Boot.AdditionS.values);
 					Boot.AdditionS.loadToOperatorGrid(additionGrid);
 					Boot.SubtractionS.loadToOperatorGrid(subtractionGrid);
 					Boot.MultiplicationS.loadToOperatorGrid(multiplicationGrid);

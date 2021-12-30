@@ -88,9 +88,6 @@ public class Store_Setting {
     	
         ReadFiles.saveToArray(fileNameS);
         ReadFiles.sendToSettings(this);
-        System.out.println("lines when retrieving data in method");
-        Display.arrayS(lines);
-        System.out.println("end");
         ReadFiles.clearAll();	//clears the array in the ReadFiles class 
         findData(correctErrors);
     }
@@ -123,10 +120,6 @@ public class Store_Setting {
 	                 **/
 	            //counter++;
 	        }
-	        
-	        System.out.println("(in findData method) values: ");
-	        Display.arrayS(values);
-	        
 	        if(correctErrors)
 	        	correctErrors();
 	        
@@ -226,7 +219,7 @@ public class Store_Setting {
         	return valueI;
         else if(!Boolean.TRUE.equals(check))
         	return 0;
-        else if(Filter.seeIfInvalid(valueI))    /*->*/        return -1;
+        else if(Filter.seeIfInvalid(valueI))    /*->*/        return -1;	//if random word
         
         else
         	return null;
@@ -345,9 +338,8 @@ public class Store_Setting {
         //change txt file if corrections were needed: 
         	
         	if(numOfErrorFixes>0) {
-        		System.out.println("Making setting file corrections... " + numOfErrorFixes);	//debug visible
-        		Display.arrayS(values);
-		        String[] valuesS = values.toArray(new String[0]);
+        		System.out.println("Making setting file corrections..." + numOfErrorFixes);	//debug visible
+        		String[] valuesS = values.toArray(new String[0]);
         		try {
 					changeSettingsLines(valuesS);
 				} 
@@ -363,10 +355,7 @@ public class Store_Setting {
     private int correctInvalidValues(){
 
     	int numOfErrors = 0;
-    	
-    	System.out.println("value size: " + values.size()  + " vs. " + settingTypeA.length);
-    	
-        if(values == null || values.size() != settingTypeA.length){
+    	if(values == null || values.size() != settingTypeA.length){
         	changeValuesToDefault(); 
         	System.out.println("Had to change values to default");
         	return 1;

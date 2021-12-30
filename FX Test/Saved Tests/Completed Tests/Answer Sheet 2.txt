@@ -1,5 +1,6 @@
-0+8 = 3 * incorrect (answer was 8)
-10+5 = 3 * incorrect (answer was 15)
-8+8 = 23 * incorrect (answer was 16)
-2+5 = 2 * incorrect (answer was 7)
+28÷4 = 34 * incorrect (answer was 7)
+4÷4 = 43 * incorrect (answer was 1)
+120÷12 = 43 * incorrect (answer was 10)
+55÷11 = 34 * incorrect (answer was 5)
+8÷4 = 34 * incorrect (answer was 2)
 Score: 0%

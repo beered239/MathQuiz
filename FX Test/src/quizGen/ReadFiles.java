@@ -47,8 +47,7 @@ public class ReadFiles {
     public static void saveToArray(String fileNameInput) throws IOException {
         fileNameS = fileNameInput;
         lines = new ArrayList<>();
-        fileName = new File(fileNameInput);
-        //fileName = FILEWRITER.createOrRetrieve(fileNameS.replaceAll(".txt", "") + ".txt");
+        fileName = FILEWRITER.createOrRetrieve(fileNameS.replaceAll(".txt", "") + ".txt");
         inFile = new Scanner(fileName);
         while (inFile.hasNext()) {
             String txt = inFile.next();
