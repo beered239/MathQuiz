@@ -11,9 +11,10 @@ public class Launch_Settings {
 		//dsfs
 	}
 	
+	public static Stage window;
 	
 	public void create() {
-		Stage window = new Stage();
+		window = new Stage();
 		
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("settingsXML.fxml"));

@@ -14,6 +14,7 @@ import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
 import javafx.scene.control.TextFormatter.Change;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
 import quizGen.Boot;
 import quizGen.Filter;
@@ -79,8 +80,14 @@ public class Controller {
 				//setup connection btw app controller and setting controller
 					application.Controller appController = application.Main.getAppLoader().getController();
 					
-				//whole tab pane listener to use enter action
-					tabPane.setOnKeyPressed(e -> KeyActions.nextComponentAction(e.getCode()));
+				//whole tab pane listener to use enter action (and to close window)
+					tabPane.setOnKeyPressed(e -> {
+						KeyCode keyCode = e.getCode();
+						if(keyCode == KeyCode.ESCAPE)
+							Launch_Settings.window.close();
+						else
+							KeyActions.nextComponentAction(keyCode);
+					});
 					
 				//cosmetics pane (changes txt and ram)
 					

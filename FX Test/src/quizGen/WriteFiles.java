@@ -101,9 +101,6 @@ public class WriteFiles {
             }
             return path.toFile();
         }
-
-        
-        
         
     //first: saving question info into two folders
 

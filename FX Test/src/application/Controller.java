@@ -286,7 +286,6 @@ public class Controller {
 	@FXML
 		void settingClicked() {
 			studentResponse.requestFocus();
-				//System.out.println("done"); //debug
 			//open settings window
 				settingWindow.create();	//error: calls ini method from this class again 
 		}

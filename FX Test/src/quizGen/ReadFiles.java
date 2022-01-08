@@ -86,7 +86,7 @@ public class ReadFiles {
             counter = Boot.filter.fixI(inFile.next());
             if(Filter.seeIfInvalid(counter)){
                 counter = 0;
-                System.out.println("Debug msg: counter file mamde no sense");   //debug
+                System.out.println("Debug msg: counter file made no sense");   //debug
             }
             inFile.close();
         }

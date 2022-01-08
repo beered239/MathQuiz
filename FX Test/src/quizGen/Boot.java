@@ -76,15 +76,16 @@ public class Boot{
                 fileWriter = new WriteFiles();
                 ArrayList<String> directories = fileWriter.fileDirectoriesS;
             //writing to files:
-            //writing quiz save files
-                fileWriter.retrieveCount();
             //create these directories temporarily  (installer will add these before the app even runs for the first time)
                 fileWriter.createDir("Saved Tests");
                 fileWriter.createDir(directories.get(0) + File.separator + "Empty Tests Sheets");
                 fileWriter.createDir(directories.get(0) + File.separator + "Completed Tests");
             //for settings location
                 fileWriter.createDir("Settings");   //id: 3
-
+            //for counter
+                fileWriter.createDir("Times_Ran");
+            //writing quiz save files
+                fileWriter.retrieveCount();
                 
         //set up the store setting classes for all setting files
                 String sDirectories = directories.get(3) + File.separator;  //for directories
