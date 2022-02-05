@@ -1,7 +1,5 @@
 package application;
 
-import java.awt.AWTException;
-import java.awt.Robot;
 import java.io.IOException;
 import java.util.Timer;
 import java.util.concurrent.Executors;
@@ -9,12 +7,14 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 import custom_elements.AlertBox;
+import custom_elements.KeyActions;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import quizGen.Boot;
@@ -33,8 +33,7 @@ public class Controller {
 		public static final Launch_Settings settingWindow = new Launch_Settings();
 	
 	@FXML
-	public void initialize() throws AWTException {
-		Robot robot = new Robot();
+	public void initialize(){
 		disableObjects();
 		
 		//listeners
@@ -47,7 +46,7 @@ public class Controller {
 			//stops most close requests
 				Main.window.setOnCloseRequest(e -> {e.consume(); preventClose();});
 			//remove highlight when textfield is focused
-				studentResponse.focusedProperty().addListener((v, oldValue, newValue) -> removeFocus(robot));
+				studentResponse.focusedProperty().addListener((v, oldValue, newValue) -> removeFocus());
 		
 				
 		//elements at the start if possible
@@ -97,10 +96,9 @@ public class Controller {
 	        	studentResponse.setText(text.replaceAll("[^0-9/.]", ""));
 		}
 	/**@apiNote removes the highlight of the textfield when refocused*/
-		void removeFocus(Robot robot){
+		void removeFocus(){
 			if(studentResponse.isFocused()) {
-				robot.keyPress(39);
-				robot.keyRelease(39);
+				KeyActions.USERINPUT.keyPress(KeyCode.RIGHT);
 				studentResponse.setStyle("-fx-border-color: #68FCEB;");
 			}
 			else {

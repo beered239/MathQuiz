@@ -5,7 +5,7 @@ import javafx.scene.robot.Robot;
 
 public class KeyActions {
 
-	private static final Robot USERINPUT = new Robot();
+	public static final Robot USERINPUT = new Robot();
 	
 	private KeyActions(){
 		
@@ -25,7 +25,6 @@ public class KeyActions {
 	public static void goToNextFocusable() {
 		USERINPUT.keyPress(KeyCode.TAB);
 	}
-	
 	
 	
 }
