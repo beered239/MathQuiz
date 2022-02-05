@@ -1,0 +1,257 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.root{
+	 -fx-font-size: 13;
+	 
+	 -fx-background-color: black;
+	 -fx-font-style: normal ;
+	 -fx-text-fill: white;
+	 -fx-background-image: url("modern_blue.png");
+	 -fx-background-repeat: no-repeat;
+	 -fx-background-size: stretch;
+	 
+	 -fx-accent: #5B6780;
+	 
+	 /*-fx-text-inner-color: black;*/
+}
+
+/*define variables here (like numbers)*/
+*{
+	-def-text-size: 50;
+}
+
+
+/*input box */
+#studentResponse:focused{
+	-fx-focus-color: #68FCEB;
+	
+	/*highlight */
+	/*-fx-border-color: #68FCEB;  -> replaced with a listener that highlights if textfield is focused*/
+	
+	-fx-background-color: rgba(61,66,91,0.2);
+	
+	-fx-opacity: 1;
+	
+}
+#studentResponse{
+	-fx-text-fill:#320F0F;
+	-fx-alignment: center;
+	-fx-opacity: 0.5;
+	-fx-padding: 0;
+	
+	
+	/*further style the textfield */
+		-fx-background-color:transparent;
+		-fx-border-color:transparent;
+		-fx-border-radius: 10;
+		-fx-background-radius: 10;		
+}
+
+
+
+
+
+/*won't work b/c this object doesn't exist.. root is actually an object in the main method... Never mind text is just worse than label*/
+.text{
+	-fx-text-fill: black;
+	-fx-text-inner-color: red;
+	
+} 
+
+.label{
+	-fx-text-fill: white;
+	
+} 
+
+#MenuBar{
+	-fx-background-color: rgba(58,69,84,0.6);
+	
+	-fx-padding: 0.0%;
+	-fx-alignment: center;	
+	-fx-accent: #223253; /*ACCENT COLOR: the color that of the highlight when something is selected*/
+	-fx-focus-traversable: false;
+	
+	-fx-font-size: 13;
+	/*-fx-opacity: 60%;*/
+}
+
+#MenuItem{
+	/*-fx-background-color: grey;*/
+	
+}
+
+
+.menu:hover{
+	-fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+    -fx-background-radius: 3px, 3px, 2px, 1px;
+    -fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em; /* 4 8 4 8 */
+    
+    
+}/*options when hovered (items not the bar) */
+
+.menu .label{
+	-fx-text-fill: #80D4FC;
+}/*each button's text */
+
+
+.context-menu{
+	-fx-background-color: grey;
+	-fx-background-radius: 0 0 6 6;
+	-fx-border-color: transparent;
+}/*The container for the sub menu */
+
+
+.menu-item:hover{
+	-fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+}
+.menu-item{
+	-fx-background-color: #777787;
+	-fx-background-radius: 3px, 3px, 2px, 1px;
+	
+	-fx-background-position: center;/*consider removing, doesn't work */
+
+}
+
+
+.menu-item .label{
+	-fx-text-fill: #80D4FC;
+	-fx-text-alignment: center;
+	-fx-padding: 2,2%,2,2%;/*Problem: might not work properly */
+}/*the text property for the sub menu options */
+
+
+/*For settings button in menu panel */
+#settingButton{
+/*	-fx-background-image: url("settings_icon.png");
+-fx-background-repeat: no-repeat;
+	-fx-background-size: contain  ;
+	
+
+*/
+
+
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+	-fx-max-height: 20;
+	-fx-max-width: 20;
+	/*-fx-opacity: 0.49; doesn't work, using fxml opacity instead**/
+}/*a menu object */
+
+
+
+/*used to style a pressable image button */
+
+/*used to be called: completeSettingButton */
+
+	#imageButton:hover{
+		/*-fx-effect: innershadow(one-pass-box , #56DBCB, 10, 1.00, 0, 0);*/
+		-fx-opacity: 1;
+		
+	}
+	#imageButton:focused{
+		-fx-opacity: 1;
+		
+	}
+	#imageButton:pressed{
+		-fx-opacity: 1;
+	}
+#imageButton{
+	/*-fx-background-image: url("settings_icon.png");
+	  -fx-background-size: 80% 80%;*/
+	 -fx-opacity:0.49 ;
+    
+    -fx-background-repeat: no-repeat;
+    -fx-background-position:center; 
+    -fx-background-color: transparent;		
+    
+	-fx-padding: 0;
+	
+	
+}	
+	
+	/*saved css for button:
+	 * hover
+	 * -fx-focus-color: #68FCEB;
+		-fx-border-color: #68FCEB;
+		-fx-border-radius: 10;
+		-fx-border-width: 1;
+		-fx-background-color: #072749;
+		-fx-background-radius: 10;
+		-fx-opacity: 1;
+		* 
+		* focus
+		* -fx-focus-color: #68FCEB;
+		-fx-border-color: #68FCEB;
+		-fx-border-radius: 10;
+		-fx-border-width: 1;
+		-fx-background-color: rgba(213,216,220,0.3);
+		-fx-background-radius: 10;
+		-fx-opacity: 1;
+		* 
+		* Old pressed values
+		-fx-focus-color: #68FCEB;
+		-fx-border-color: #68FCEB;
+		-fx-border-radius: 10;
+		-fx-border-width: 1;
+		-fx-background-color: #072749;
+		-fx-background-radius: 10;
+
+		
+		*/
+	
+
+	#settingButtonContainer{
+		/*
+		 * 
+		 	-fx-graphic: url(settings_icon.png);
+	-fx-background-color: white;
+	-fx-border-color: transparent;
+		
+		  */
+		-fx-border-color: black;
+		-fx-max-height: 20;
+		-fx-max-width: 20;
+	}
+	#settingImage{
+		-fx-image: url("settings_icon.png");
+	}/*imageview for the settings button*/
+
+
+	#playImage{
+		-fx-image: url("Play.png");
+		-fx-scale-x: 0.8;
+		-fx-scale-y: 0.8;
+		
+	}
+
+	.imageView{
+		-fx-scale-shape: true;/*can't tell the difference with this */
+		-fx-padding: 0;
+		-fx-scale-x: 1;
+		-fx-scale-y: 1;
+	}
+
+
+/*Question texts*/
+	#questionNum{
+		-fx-underline: true;
+		
+	}/*set ratio size for this value in the controller */
+
+
+	#scorePercent{
+		-fx-padding: 0;
+	}
+		#scorePercentContainer{
+			-fx-padding: 0;
+			-fx-alignment: center;
+		}
+
+/*whole question box (and elements in it)*/
+	#questionBox{
+		-fx-alignment: center;
+		-fx-padding: 0;
+		
+	}
+/*student response is the textfield */

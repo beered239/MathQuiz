@@ -1,0 +1,139 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+/*using: modena.css */
+
+.root{
+	-fx-text-fill: white;
+	-fx-background-color: black;
+	
+	-fx-background-image: url("bg.png");
+	 -fx-background-repeat: no-repeat;
+	 -fx-background-size: stretch;
+	 
+	 -fx-accent: #797E8F;
+}
+
+#menuBar{
+	-fx-background-color: black;
+	-fx-border-color: grey;
+	-fx-padding: 0;
+}
+
+.label{
+}
+
+
+
+
+
+/*deal with tab pane styling */
+
+
+.tab-pane{
+	
+}/*whole pane */
+
+
+.tab-pane > .tab-header-area > .tab-header-background {
+    /* TODO should not be using text-box-border I think? */
+    -fx-background-color: transparent;
+     -fx-background-image: url("head.png");
+	 -fx-background-repeat: no-repeat;
+	 -fx-background-size: stretch;
+	 
+        
+}/*the background of the tab bar!!!!!*/
+
+.tab-pane .headers-region {
+	
+}/*small border around the whole tab thing (not the header) */
+
+.tab{
+	-fx-background-color: #2E3246;
+	
+}/*the actual tab */
+
+.tab-pane > .tab-header-area > .headers-region > .tab > .tab-container > .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: white;
+}/*text label */
+
+
+
+/*dropdown menu for tab pane */
+.tab-pane > .tab-header-area > .control-buttons-tab > .container {
+    -fx-padding: 3 0 0 0;
+}/*container for the button for the dropdown menu */
+.tab-pane > .tab-header-area > .control-buttons-tab > .container > .tab-down-button {
+    -fx-background-color: -fx-outer-border, -fx-inner-border, -fx-body-color;
+    -fx-background-insets: -1 0 5 0, 0 1 6 1, 1 2 7 2;
+    -fx-padding: 4 4 9 4;
+    -fx-background-radius: 10;
+}/*the button for the dropdown menu */
+
+.context-menu {
+    -fx-background-color:
+        linear-gradient(to bottom,
+            derive(-fx-color,-17%),
+            derive(-fx-color,-30%)
+        ),
+        #2E3246;/*< this color is the color of the main background */
+    -fx-background-insets: 0, 1;
+    -fx-padding: 0.333333em 0.083333em 0.333333em 0.083333em; /* 4 1 8 1 */
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.2) , 12, 0.0 , 0 , 8 );
+    
+    -fx-text-fill: white;
+    
+    -fx-accent: #223253; /*ACCENT COLOR: the color that of the highlight when something is selected*/
+}
+.context-menu .label{
+	-fx-text-fill: white;
+}/*text inside dropdown menu */
+
+
+
+/*GLOBAL SETTINGS STYLING */
+#label{
+	-fx-text-fill: white;
+	-fx-underline: true;
+	
+	-fx-padding: 0 0 0 20;
+	/*", FontWeight.SEMI_BOLD, FontPosture.REGULAR,19 */ 
+}
+
+#input{
+	/*border and background */
+		-fx-background-color: rgba(67,79,115,0.6);
+		-fx-border-color: #171920;
+		-fx-border-radius: 5;
+		-fx-background-radius: 8;
+	/*text*/	
+		-fx-text-fill:white;
+		-fx-alignment: center;
+		
+}
+#input:focused{
+	-fx-border-color: #5FF6A8;
+}
+
+
+#saveButton{
+	
+	/*-fx-background-color: #484E64;
+	-fx-border-color: black;
+	-fx-border-radius: 10;
+	-fx-background-radius: 14;
+	 * 
+	  */
+	
+}
+
+.check-box:focused > .box{
+
+
+}/*works iffie look in moderna more*/
+
+/*h1080.0 w1920.0
+ * ratio:  9 : 16
+ * 
+ * 
+ */

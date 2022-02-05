@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?impport javafx.collections.FXCollections?>
+
+<fx:root id="grid" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" type="javafx.scene.layout.GridPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   
+   <!-- Setting Name Label -->
+   <Label id="title" fx:id="settingName" text="Operator Settings" GridPane.columnSpan="2" GridPane.halignment="CENTER" />
+   <HBox id="boxLimit" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+      <children>
+         <Label id="settingTitle" fx:id="label1" text="Difficulty Option:" />
+      </children>
+   </HBox>
+   <HBox id="boxLimit" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+      <children>
+         <Label id="settingTitle" text="x2 Range Values:" />
+      </children>
+   </HBox>
+   <HBox id="boxLimit" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
+      <children>
+         <Label id="settingTitle" text="Practicing Value:" />
+      </children>
+   </HBox>
+   <HBox id="boxLimit" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <children>
+         <!-- Difficulty Selection Component -->
+         <ComboBox fx:id="difficultySelection" prefWidth="150.0"> 
+   </ComboBox>
+      </children>
+   </HBox>
+   
+         <!-- For Range Value inputs -->
+   <HBox id="boxLimit" fx:id="rangeBoxX2" prefHeight="100.0" prefWidth="220.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+      <children>
+         <TextField id="input" fx:id="rangeTF1" />	<!-- 1st Range TF -->
+         <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="-" />
+         <TextField id="input" fx:id="rangeTF2" /> <!-- 2nd Range TF -->
+      </children>
+   </HBox>
+   <HBox id="boxLimit" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+      <children>
+         
+         <!-- Practice Value Textfield -->
+         <TextField id="input" fx:id="practiceValTF" />
+      </children>
+   </HBox>
+   
+   
+   <Button id="saveButton" fx:id="saveButton" minWidth="80.0"  mnemonicParsing="false" text="Save Changes" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+</fx:root>
